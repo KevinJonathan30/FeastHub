@@ -17,7 +17,7 @@ struct RestaurantCard: View {
             content()
         }
         .frame(width: UIScreen.main.bounds.width - 32)
-        .background(Color.random.opacity(0.3))
+        .background(Color.random.opacity(0.25))
         .cornerRadius(8)
     }
 }
@@ -27,7 +27,7 @@ struct RestaurantCard: View {
 extension RestaurantCard {
     @ViewBuilder
     func image() -> some View {
-        CachedAsyncImage(url: URL(string: "https://restaurant-api.dicoding.dev/images/small/\(restaurant.pictureId)")) { image in
+        CachedAsyncImage(url: URL(string: "https://restaurant-api.dicoding.dev/images/medium/\(restaurant.pictureId)")) { image in
             image.resizable()
         } placeholder: {
             ProgressView()

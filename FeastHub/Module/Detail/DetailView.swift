@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CachedAsyncImage
+import WrappingHStack
 
 struct DetailView: View {
     @ObservedObject var presenter: DetailPresenter
@@ -80,9 +81,9 @@ extension DetailView {
             HStack {
                 ForEach(restaurant.categories) { category in
                     Text(category.name)
-                        .font(.caption)
+                        .font(.caption2)
                         .padding(4)
-                        .background(Color.random.opacity(0.3))
+                        .background(Color.random.opacity(0.25))
                         .cornerRadius(8)
                 }
             }
@@ -93,44 +94,80 @@ extension DetailView {
     
     @ViewBuilder
     func description(restaurant: RestaurantModel) -> some View {
-        Text(restaurant.description)
-            .font(.system(size: 15))
+        VStack(alignment: .leading) {
+            subheaderTitle("Description")
+                .padding(.vertical)
+            
+            Text(restaurant.description)
+                .font(.system(size: 15))
+        }.padding(.bottom)
     }
     
     @ViewBuilder
     func menu(restaurant: RestaurantModel) -> some View {
         VStack(alignment: .leading) {
-            ForEach(restaurant.menus.foods) { food in
+            subheaderTitle("Menu")
+                .padding(.vertical)
+            
+            subheader2Title("Foods")
+            
+            WrappingHStack(restaurant.menus.foods, id: \.self, lineSpacing: 4) { food in
                 Text(food.name)
                     .font(.caption)
                     .padding(4)
-                    .background(Color.random.opacity(0.3))
+                    .background(Color.gray.opacity(0.1))
                     .cornerRadius(8)
             }
             
-            ForEach(restaurant.menus.drinks) { drink in
+            subheader2Title("Drinks")
+            
+            WrappingHStack(restaurant.menus.drinks, id: \.self, lineSpacing: 4) { drink in
                 Text(drink.name)
                     .font(.caption)
                     .padding(4)
-                    .background(Color.random.opacity(0.3))
+                    .background(Color.gray.opacity(0.1))
                     .cornerRadius(8)
             }
-        }
+        }.padding(.bottom)
+    }
+    
+    @ViewBuilder
+    func location(restaurant: RestaurantModel) -> some View {
+        VStack(alignment: .leading) {
+            subheaderTitle("Location")
+                .padding(.vertical)
+            
+            HStack {
+                Image(systemName: "location.fill")
+                
+                Text("\(restaurant.address), \(restaurant.city)")
+                    .font(.system(size: 15))
+            }
+        }.padding(.bottom)
     }
     
     @ViewBuilder
     func review(restaurant: RestaurantModel) -> some View {
         VStack(alignment: .leading) {
+            subheaderTitle("Customer Reviews")
+                .padding(.vertical)
+            
             ForEach(restaurant.customerReviews) { review in
-                Text(review.name)
-                    .font(.headline)
-                    .bold()
-                
-                Text(review.date)
-                    .font(.subheadline)
-                
-                Text(review.review)
-                    .font(.body)
+                HStack(alignment: .firstTextBaseline) {
+                    Image(systemName: "character.bubble.fill")
+                    
+                    VStack(alignment: .leading) {
+                        Text(review.name)
+                            .font(.headline)
+                            .bold()
+                        
+                        Text(review.date)
+                            .font(.subheadline)
+                        
+                        Text(review.review)
+                            .font(.body)
+                    }
+                }
                 
                 Spacer()
                     .frame(height: 16)
@@ -152,32 +189,29 @@ extension DetailView {
     }
     
     @ViewBuilder
+    func subheader2Title(_ title: String) -> some View {
+        Text(title)
+            .font(.subheadline)
+    }
+    
+    @ViewBuilder
     func content() -> some View {
         let restaurant = self.presenter.restaurant
         
         LazyVStack(alignment: .leading, spacing: 0) {
             mainHeader(restaurant: restaurant)
             
-            Spacer()
-            
-            subheaderTitle("Description")
-                .padding(.vertical)
-            
             description(restaurant: restaurant)
-                .padding(.bottom)
             
             Divider()
-            
-            subheaderTitle("Menu")
-                .padding(.vertical)
             
             menu(restaurant: restaurant)
             
             Divider()
-                .padding(.top)
             
-            subheaderTitle("Customer Reviews")
-                .padding(.vertical)
+            location(restaurant: restaurant)
+            
+            Divider()
             
             review(restaurant: restaurant)
         }

@@ -60,6 +60,7 @@
 		5D354164294642DA006470DD /* MenuMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D354163294642DA006470DD /* MenuMapper.swift */; };
 		5D3541662946481F006470DD /* ReviewMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3541652946481F006470DD /* ReviewMapper.swift */; };
 		5D35416829472E1F006470DD /* ViewStateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D35416729472E1F006470DD /* ViewStateExtension.swift */; };
+		5D35416C294854C9006470DD /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = 5D35416B294854C9006470DD /* WrappingHStack */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,7 @@
 				5D3541472944C588006470DD /* CachedAsyncImage in Frameworks */,
 				5D3540902944BDA9006470DD /* RealmSwift in Frameworks */,
 				5D35408E2944BDA9006470DD /* Realm in Frameworks */,
+				5D35416C294854C9006470DD /* WrappingHStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +452,7 @@
 				5D35408F2944BDA9006470DD /* RealmSwift */,
 				5D3540922944BDDC006470DD /* Alamofire */,
 				5D3541462944C588006470DD /* CachedAsyncImage */,
+				5D35416B294854C9006470DD /* WrappingHStack */,
 			);
 			productName = FeastHub;
 			productReference = 5D3540592944B99A006470DD /* FeastHub.app */;
@@ -527,6 +530,7 @@
 				5D35408C2944BDA9006470DD /* XCRemoteSwiftPackageReference "realm-swift" */,
 				5D3540912944BDDB006470DD /* XCRemoteSwiftPackageReference "Alamofire" */,
 				5D3541452944C588006470DD /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
+				5D35416A294854C9006470DD /* XCRemoteSwiftPackageReference "WrappingHStack" */,
 			);
 			productRefGroup = 5D35405A2944B99A006470DD /* Products */;
 			projectDirPath = "";
@@ -964,6 +968,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		5D35416A294854C9006470DD /* XCRemoteSwiftPackageReference "WrappingHStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dkk/WrappingHStack";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -986,6 +998,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5D3541452944C588006470DD /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
 			productName = CachedAsyncImage;
+		};
+		5D35416B294854C9006470DD /* WrappingHStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D35416A294854C9006470DD /* XCRemoteSwiftPackageReference "WrappingHStack" */;
+			productName = WrappingHStack;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
