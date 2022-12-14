@@ -35,12 +35,14 @@ class FavoritePresenter: ObservableObject {
                     break
                 }
             }, receiveValue: { restaurants in
-                self.restaurants = restaurants
-                
-                if restaurants.isEmpty {
-                    self.viewState = .empty
-                } else {
-                    self.viewState = .loaded
+                withAnimation(.spring()) {
+                    self.restaurants = restaurants
+                    
+                    if restaurants.isEmpty {
+                        self.viewState = .empty
+                    } else {
+                        self.viewState = .loaded
+                    }
                 }
             })
             .store(in: &cancellables)

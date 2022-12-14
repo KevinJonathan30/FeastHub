@@ -9,7 +9,10 @@ import Foundation
 import Combine
 
 protocol DetailUseCase {
-    func getDetail(id: String) -> AnyPublisher<RestaurantModel, Error>
+    func getDetail(withId id: String) -> AnyPublisher<RestaurantModel, Error>
+    func getRestaurantIsFavorite(withId id: String) -> AnyPublisher<Bool, Error>
+    func addFavoriteRestaurant(restaurant: RestaurantModel) -> AnyPublisher<Bool, Error>
+    func deleteFavoriteRestaurant(withId id: String) -> AnyPublisher<Bool, Error>
 }
 
 class DetailInteractor: DetailUseCase {
@@ -21,7 +24,19 @@ class DetailInteractor: DetailUseCase {
         self.repository = repository
     }
     
-    func getDetail(id: String) -> AnyPublisher<RestaurantModel, Error> {
+    func getDetail(withId id: String) -> AnyPublisher<RestaurantModel, Error> {
         return repository.getDetail(by: id)
+    }
+    
+    func getRestaurantIsFavorite(withId id: String) -> AnyPublisher<Bool, Error> {
+        return repository.getRestaurantIsFavorite(withId: id)
+    }
+    
+    func addFavoriteRestaurant(restaurant: RestaurantModel) -> AnyPublisher<Bool, Error> {
+        return repository.addFavoriteRestaurant(from: restaurant)
+    }
+    
+    func deleteFavoriteRestaurant(withId id: String) -> AnyPublisher<Bool, Error> {
+        return repository.deleteFavoriteRestaurant(withId: id)
     }
 }

@@ -15,6 +15,7 @@ class DetailPresenter: ObservableObject {
     @Published var restaurant: RestaurantModel
     @Published var errorMessage: String = ""
     @Published var viewState: ViewState = .loading
+    @Published var isFavorite: Bool = false
     
     init(detailUseCase: DetailUseCase, restaurant: RestaurantModel) {
         self.detailUseCase = detailUseCase
@@ -23,7 +24,7 @@ class DetailPresenter: ObservableObject {
     
     func getRestaurantDetail() {
         viewState = .loading
-        detailUseCase.getDetail(id: restaurant.id)
+        detailUseCase.getDetail(withId: restaurant.id)
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { completion in
                 switch completion {
@@ -35,6 +36,39 @@ class DetailPresenter: ObservableObject {
                 }
             }, receiveValue: { restaurant in
                 self.restaurant = restaurant
+                self.getRestaurantIsFavorite(id: restaurant.id)
+            })
+            .store(in: &cancellables)
+    }
+    
+    func getRestaurantIsFavorite(id: String) {
+        detailUseCase.getRestaurantIsFavorite(withId: id)
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { _ in },
+                  receiveValue: { isFavorite in
+                self.isFavorite = isFavorite
+            })
+            .store(in: &cancellables)
+    }
+    
+    func addFavoriteRestaurant() {
+        detailUseCase.addFavoriteRestaurant(restaurant: restaurant)
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { _ in },
+                  receiveValue: { isSuccess in
+                print(isSuccess)
+                self.getRestaurantIsFavorite(id: self.restaurant.id)
+            })
+            .store(in: &cancellables)
+    }
+    
+    func deleteFavoriteRestaurant() {
+        detailUseCase.deleteFavoriteRestaurant(withId: restaurant.id)
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { _ in },
+                  receiveValue: { isSuccess in
+                print(isSuccess)
+                self.getRestaurantIsFavorite(id: self.restaurant.id)
             })
             .store(in: &cancellables)
     }

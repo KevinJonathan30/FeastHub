@@ -34,6 +34,20 @@ struct DetailView: View {
             self.presenter.getRestaurantDetail()
         }
         .navigationBarTitle("Detail", displayMode: .inline)
+        .toolbar {
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                Button {
+                    if self.presenter.isFavorite {
+                        self.presenter.deleteFavoriteRestaurant()
+                    } else {
+                        self.presenter.addFavoriteRestaurant()
+                    }
+                } label: {
+                    Image(systemName: self.presenter.isFavorite ? "star.fill" : "star")
+                        .foregroundColor(.yellow)
+                }
+            }
+        }
     }
 }
 
@@ -83,7 +97,7 @@ extension DetailView {
                     Text(category.name)
                         .font(.caption2)
                         .padding(4)
-                        .background(Color.random.opacity(0.25))
+                        .background(Color.gray.opacity(0.1))
                         .cornerRadius(8)
                 }
             }

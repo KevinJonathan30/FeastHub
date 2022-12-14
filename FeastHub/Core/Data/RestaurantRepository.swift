@@ -14,6 +14,7 @@ protocol RestaurantRepositoryProtocol {
     func searchList(by query: String) -> AnyPublisher<[RestaurantModel], Error>
     func postReview(by id: String, name: String, review: String) -> AnyPublisher<Bool, Error>
     func getFavoriteRestaurants() -> AnyPublisher<[RestaurantModel], Error>
+    func getRestaurantIsFavorite(withId id: String) -> AnyPublisher<Bool, Error>
     func addFavoriteRestaurant(from restaurant: RestaurantModel) -> AnyPublisher<Bool, Error>
     func deleteFavoriteRestaurant(withId id: String) -> AnyPublisher<Bool, Error>
 }
@@ -67,6 +68,11 @@ extension RestaurantRepository: RestaurantRepositoryProtocol {
     func getFavoriteRestaurants() -> AnyPublisher<[RestaurantModel], Error> {
         return self.locale.getFavoriteRestaurants()
             .map { RestaurantMapper.mapRestaurantEntityListToModelList(input: $0) }
+            .eraseToAnyPublisher()
+    }
+    
+    func getRestaurantIsFavorite(withId id: String) -> AnyPublisher<Bool, Error> {
+        return self.locale.getRestaurantIsFavorite(withId: id)
             .eraseToAnyPublisher()
     }
     

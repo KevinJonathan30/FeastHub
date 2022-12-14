@@ -11,6 +11,7 @@ import Combine
 
 protocol LocaleDataSourceProtocol: AnyObject {
     func getFavoriteRestaurants() -> AnyPublisher<[RestaurantEntity], Error>
+    func getRestaurantIsFavorite(withId id: String) -> AnyPublisher<Bool, Error>
     func addFavoriteRestaurant(from restaurant: RestaurantEntity) -> AnyPublisher<Bool, Error>
     func deleteFavoriteRestaurant(withId id: String) -> AnyPublisher<Bool, Error>
 }
@@ -36,6 +37,24 @@ extension LocaleDataSource: LocaleDataSourceProtocol {
                         .sorted(byKeyPath: "name", ascending: true)
                 }()
                 completion(.success(restaurantEntities.toArray(ofType: RestaurantEntity.self)))
+            } else {
+                completion(.failure(DatabaseError.invalidInstance))
+            }
+        }.eraseToAnyPublisher()
+    }
+    
+    func getRestaurantIsFavorite(
+        withId id: String
+    ) -> AnyPublisher<Bool, Error> {
+        return Future<Bool, Error> { completion in
+            if let realm = self.realm {
+                let restaurants = realm.objects(RestaurantEntity.self).filter("id = %@", id)
+                
+                if !restaurants.isEmpty {
+                    completion(.success(true))
+                } else {
+                    completion(.success(false))
+                }
             } else {
                 completion(.failure(DatabaseError.invalidInstance))
             }
