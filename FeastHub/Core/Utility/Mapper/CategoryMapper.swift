@@ -48,4 +48,3 @@ final class CategoryMapper {
         return categoryEntityList
     }
 }
-

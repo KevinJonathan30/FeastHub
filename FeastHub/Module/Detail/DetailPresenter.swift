@@ -17,7 +17,7 @@ class DetailPresenter: ObservableObject {
     @Published var viewState: ViewState = .loading
     @Published var isFavorite: Bool = false
     
-    //Alert
+    // Alert
     @Published var isShowingReviewAlert: Bool = false
     @Published var commentQuery: String = ""
     @Published var isShowingPostReviewAlert: Bool = false

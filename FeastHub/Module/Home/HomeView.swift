@@ -26,7 +26,7 @@ struct HomeView: View {
         .navigationBarTitle("FeastHub")
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
-                self.presenter.linkBuilderToProfile() {
+                self.presenter.linkBuilderToProfile {
                     Image(systemName: "person.crop.circle.fill")
                         .foregroundColor(.blue)
                 }.buttonStyle(PlainButtonStyle())

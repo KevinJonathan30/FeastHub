@@ -20,7 +20,6 @@ struct ProfileView: View {
                         Circle().stroke(.white, lineWidth: 3)
                     }
                     .shadow(radius: 7)
-                    
                 
                 VStack(alignment: .leading) {
                     Text("Kevin Jonathan")
@@ -35,7 +34,9 @@ struct ProfileView: View {
                     Text("About Me")
                         .font(.title2)
                     
-                    Text("I am Kevin Jonathan, an ambitious mobile development engineer proficient in iOS app development and Flutter. I have 4+ years of experience in mobile application engineering. I am an alumni from Petra Christian University and Apple Developer Academy.\nI am currently working as an iOS Engineer at Blibli.com!")
+                    Text("I am Kevin Jonathan, a mobile development engineer proficient in iOS app development. I have 4+ years of experience in mobile application engineering.")
+                    
+                    Text("I am an alumni from Petra Christian University and Apple Developer Academy. I am currently working as an iOS Engineer at Blibli.com!")
                 }
             }
             .padding()

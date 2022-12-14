@@ -12,7 +12,7 @@ struct MenuModel: Equatable, Identifiable {
     var foods: [FoodModel] = []
     var drinks: [DrinkModel] = []
     
-    static func ==(lhs: MenuModel, rhs: MenuModel) -> Bool {
+    static func == (lhs: MenuModel, rhs: MenuModel) -> Bool {
         return lhs.id == rhs.id
     }
 }

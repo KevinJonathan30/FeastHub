@@ -90,9 +90,9 @@ extension RemoteDataSource: RemoteDataSourceProtocol {
         return Future<[ReviewResponse], Error> { completion in
             if let url = URL(string: Endpoints.Gets.addReview.url) {
                 let params: [String: String] = [
-                    "id" : id,
-                    "name" : name,
-                    "review" : review
+                    "id": id,
+                    "name": name,
+                    "review": review
                 ]
                 
                 AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default)

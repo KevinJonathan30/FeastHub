@@ -49,7 +49,11 @@ struct DetailView: View {
                 }
             }
         }.alert(isPresented: self.$presenter.isShowingPostReviewAlert) {
-            Alert(title: Text(self.presenter.alertTitle), message: Text(self.presenter.errorMessageAlert), dismissButton: .default(Text("OK")))
+            Alert(
+                title: Text(self.presenter.alertTitle),
+                  message: Text(self.presenter.errorMessageAlert),
+                  dismissButton: .default(Text("OK"))
+            )
         }
     }
 }

@@ -11,9 +11,6 @@
 		5D35405F2944B99A006470DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D35405E2944B99A006470DD /* ContentView.swift */; };
 		5D3540612944B99F006470DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D3540602944B99F006470DD /* Assets.xcassets */; };
 		5D3540642944B99F006470DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D3540632944B99F006470DD /* Preview Assets.xcassets */; };
-		5D35406E2944B99F006470DD /* FeastHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D35406D2944B99F006470DD /* FeastHubTests.swift */; };
-		5D3540782944B99F006470DD /* FeastHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3540772944B99F006470DD /* FeastHubUITests.swift */; };
-		5D35407A2944B99F006470DD /* FeastHubUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3540792944B99F006470DD /* FeastHubUITestsLaunchTests.swift */; };
 		5D35408B2944BC20006470DD /* RestaurantRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D35408A2944BC20006470DD /* RestaurantRepository.swift */; };
 		5D35408E2944BDA9006470DD /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5D35408D2944BDA9006470DD /* Realm */; };
 		5D3540902944BDA9006470DD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5D35408F2944BDA9006470DD /* RealmSwift */; };
@@ -62,6 +59,7 @@
 		5D35416829472E1F006470DD /* ViewStateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D35416729472E1F006470DD /* ViewStateExtension.swift */; };
 		5D35416C294854C9006470DD /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = 5D35416B294854C9006470DD /* WrappingHStack */; };
 		5DFE6869294A12B0002F37E7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFE6868294A12B0002F37E7 /* ProfileView.swift */; };
+		5DFE686E294A1AA5002F37E7 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5DFE686D294A1AA5002F37E7 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,10 +86,7 @@
 		5D3540602944B99F006470DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D3540632944B99F006470DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5D3540692944B99F006470DD /* FeastHubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeastHubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D35406D2944B99F006470DD /* FeastHubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeastHubTests.swift; sourceTree = "<group>"; };
 		5D3540732944B99F006470DD /* FeastHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeastHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D3540772944B99F006470DD /* FeastHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeastHubUITests.swift; sourceTree = "<group>"; };
-		5D3540792944B99F006470DD /* FeastHubUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeastHubUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5D35408A2944BC20006470DD /* RestaurantRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantRepository.swift; sourceTree = "<group>"; };
 		5D3540952944BE1D006470DD /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
 		5D35409C2944BE80006470DD /* LocaleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleDataSource.swift; sourceTree = "<group>"; };
@@ -135,6 +130,7 @@
 		5D3541652946481F006470DD /* ReviewMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMapper.swift; sourceTree = "<group>"; };
 		5D35416729472E1F006470DD /* ViewStateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStateExtension.swift; sourceTree = "<group>"; };
 		5DFE6868294A12B0002F37E7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		5DFE686D294A1AA5002F37E7 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,8 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				5D35405B2944B99A006470DD /* FeastHub */,
-				5D35406C2944B99F006470DD /* FeastHubTests */,
-				5D3540762944B99F006470DD /* FeastHubUITests */,
 				5D35405A2944B99A006470DD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -196,6 +190,7 @@
 				5D3540882944BBA9006470DD /* Module */,
 				5D3540602944B99F006470DD /* Assets.xcassets */,
 				5D3540622944B99F006470DD /* Preview Content */,
+				5DFE686D294A1AA5002F37E7 /* .swiftlint.yml */,
 			);
 			path = FeastHub;
 			sourceTree = "<group>";
@@ -206,23 +201,6 @@
 				5D3540632944B99F006470DD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		5D35406C2944B99F006470DD /* FeastHubTests */ = {
-			isa = PBXGroup;
-			children = (
-				5D35406D2944B99F006470DD /* FeastHubTests.swift */,
-			);
-			path = FeastHubTests;
-			sourceTree = "<group>";
-		};
-		5D3540762944B99F006470DD /* FeastHubUITests */ = {
-			isa = PBXGroup;
-			children = (
-				5D3540772944B99F006470DD /* FeastHubUITests.swift */,
-				5D3540792944B99F006470DD /* FeastHubUITestsLaunchTests.swift */,
-			);
-			path = FeastHubUITests;
 			sourceTree = "<group>";
 		};
 		5D3540862944BB82006470DD /* App */ = {
@@ -444,6 +422,7 @@
 				5D3540552944B99A006470DD /* Sources */,
 				5D3540562944B99A006470DD /* Frameworks */,
 				5D3540572944B99A006470DD /* Resources */,
+				5DFE686C294A1959002F37E7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -551,6 +530,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DFE686E294A1AA5002F37E7 /* .swiftlint.yml in Resources */,
 				5D3540642944B99F006470DD /* Preview Assets.xcassets in Resources */,
 				5D3540612944B99F006470DD /* Assets.xcassets in Resources */,
 			);
@@ -571,6 +551,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5DFE686C294A1959002F37E7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then \n    swiftlint \nelse \n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\" \nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5D3540552944B99A006470DD /* Sources */ = {
@@ -629,7 +629,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D35406E2944B99F006470DD /* FeastHubTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,8 +636,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D35407A2944B99F006470DD /* FeastHubUITestsLaunchTests.swift in Sources */,
-				5D3540782944B99F006470DD /* FeastHubUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
