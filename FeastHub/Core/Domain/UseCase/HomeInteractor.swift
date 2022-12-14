@@ -10,6 +10,7 @@ import Combine
 
 protocol HomeUseCase {
     func getList() -> AnyPublisher<[RestaurantModel], Error>
+    func searchList(by query: String) -> AnyPublisher<[RestaurantModel], Error>
 }
 
 class HomeInteractor: HomeUseCase {
@@ -21,5 +22,9 @@ class HomeInteractor: HomeUseCase {
     
     func getList() -> AnyPublisher<[RestaurantModel], Error> {
         return repository.getList()
+    }
+    
+    func searchList(by query: String) -> AnyPublisher<[RestaurantModel], Error> {
+        return repository.searchList(by: query)
     }
 }

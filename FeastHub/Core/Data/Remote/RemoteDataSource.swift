@@ -67,7 +67,7 @@ extension RemoteDataSource: RemoteDataSourceProtocol {
         by query: String
     ) -> AnyPublisher<[RestaurantResponse], Error> {
         return Future<[RestaurantResponse], Error> { completion in
-            if let url = URL(string: Endpoints.Gets.search.url + query) {
+            if let url = URL(string: Endpoints.Gets.search.url + (query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")) {
                 AF.request(url)
                     .validate()
                     .responseDecodable(of: RestaurantSearchResponse.self) { response in

@@ -29,7 +29,9 @@ struct HomeView: View {
                 self.presenter.getRestaurantList()
             }
         }
+        .searchable(text: self.$presenter.searchQuery)
         .refreshable {
+            guard self.presenter.searchQuery.isEmpty else { return }
             self.presenter.getRestaurantList()
         }
     }
