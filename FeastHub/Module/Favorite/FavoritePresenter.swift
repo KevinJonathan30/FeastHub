@@ -9,7 +9,6 @@ import SwiftUI
 import Combine
 
 class FavoritePresenter: ObservableObject {
-    
     private var cancellables: Set<AnyCancellable> = []
     private let router = FavoriteRouter()
     private let favoriteUseCase: FavoriteUseCase
@@ -20,6 +19,10 @@ class FavoritePresenter: ObservableObject {
     
     init(favoriteUseCase: FavoriteUseCase) {
         self.favoriteUseCase = favoriteUseCase
+    }
+    
+    deinit {
+        self.cancellables.removeAll()
     }
     
     func getFavoriteRestaurants() {

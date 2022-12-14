@@ -24,6 +24,10 @@ class HomePresenter: ObservableObject {
         self.initObserver()
     }
     
+    deinit {
+        self.cancellables.removeAll()
+    }
+    
     func initObserver() {
         initSearchRestaurantObserver()
     }

@@ -32,6 +32,7 @@ struct DetailView: View {
         }
         .onAppear {
             self.presenter.getRestaurantDetail()
+            self.presenter.getRestaurantIsFavorite()
         }
         .navigationBarTitle("Detail", displayMode: .inline)
         .toolbar {
@@ -96,8 +97,9 @@ extension DetailView {
                 ForEach(restaurant.categories) { category in
                     Text(category.name)
                         .font(.caption2)
+                        .bold()
                         .padding(4)
-                        .background(Color.gray.opacity(0.1))
+                        .background(Color.brown.opacity(0.2))
                         .cornerRadius(8)
                 }
             }
@@ -129,7 +131,7 @@ extension DetailView {
                 Text(food.name)
                     .font(.caption)
                     .padding(4)
-                    .background(Color.gray.opacity(0.1))
+                    .background(Color.brown.opacity(0.2))
                     .cornerRadius(8)
             }
             
@@ -139,7 +141,7 @@ extension DetailView {
                 Text(drink.name)
                     .font(.caption)
                     .padding(4)
-                    .background(Color.gray.opacity(0.1))
+                    .background(Color.brown.opacity(0.2))
                     .cornerRadius(8)
             }
         }.padding(.bottom)

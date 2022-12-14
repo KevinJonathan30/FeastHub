@@ -22,6 +22,10 @@ class DetailPresenter: ObservableObject {
         self.restaurant = restaurant
     }
     
+    deinit {
+        self.cancellables.removeAll()
+    }
+    
     func getRestaurantDetail() {
         viewState = .loading
         detailUseCase.getDetail(withId: restaurant.id)
@@ -36,13 +40,12 @@ class DetailPresenter: ObservableObject {
                 }
             }, receiveValue: { restaurant in
                 self.restaurant = restaurant
-                self.getRestaurantIsFavorite(id: restaurant.id)
             })
             .store(in: &cancellables)
     }
     
-    func getRestaurantIsFavorite(id: String) {
-        detailUseCase.getRestaurantIsFavorite(withId: id)
+    func getRestaurantIsFavorite() {
+        detailUseCase.getRestaurantIsFavorite(withId: self.restaurant.id)
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { _ in },
                   receiveValue: { isFavorite in
@@ -57,7 +60,7 @@ class DetailPresenter: ObservableObject {
             .sink(receiveCompletion: { _ in },
                   receiveValue: { isSuccess in
                 print(isSuccess)
-                self.getRestaurantIsFavorite(id: self.restaurant.id)
+                self.getRestaurantIsFavorite()
             })
             .store(in: &cancellables)
     }
@@ -68,7 +71,7 @@ class DetailPresenter: ObservableObject {
             .sink(receiveCompletion: { _ in },
                   receiveValue: { isSuccess in
                 print(isSuccess)
-                self.getRestaurantIsFavorite(id: self.restaurant.id)
+                self.getRestaurantIsFavorite()
             })
             .store(in: &cancellables)
     }
