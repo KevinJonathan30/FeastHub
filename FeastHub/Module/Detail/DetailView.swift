@@ -48,6 +48,8 @@ struct DetailView: View {
                         .foregroundColor(.yellow)
                 }
             }
+        }.alert(isPresented: self.$presenter.isShowingPostReviewAlert) {
+            Alert(title: Text(self.presenter.alertTitle), message: Text(self.presenter.errorMessageAlert), dismissButton: .default(Text("OK")))
         }
     }
 }
@@ -165,8 +167,29 @@ extension DetailView {
     @ViewBuilder
     func review(restaurant: RestaurantModel) -> some View {
         VStack(alignment: .leading) {
-            subheaderTitle("Customer Reviews")
-                .padding(.vertical)
+            HStack {
+                subheaderTitle("Customer Reviews")
+                
+                Spacer()
+                
+                Button {
+                    self.presenter.isShowingReviewAlert = true
+                } label: {
+                    HStack {
+                        Image(systemName: "square.and.pencil")
+                        
+                        Text("Write a Review")
+                            .font(.system(size: 15))
+                    }
+                }.alert("Write a Review", isPresented: self.$presenter.isShowingReviewAlert) {
+                    TextField("Review here..", text: self.$presenter.commentQuery)
+                    Button("Submit", action: {
+                        self.presenter.postReview()
+                    })
+                } message: {
+                    Text("Please enter your review below.")
+                }
+            }.padding(.vertical)
             
             ForEach(restaurant.customerReviews) { review in
                 HStack(alignment: .firstTextBaseline) {

@@ -13,7 +13,7 @@ protocol RemoteDataSourceProtocol: AnyObject {
     func getList() -> AnyPublisher<[RestaurantResponse], Error>
     func getDetail(by id: String) -> AnyPublisher<RestaurantResponse, Error>
     func searchList(by query: String) -> AnyPublisher<[RestaurantResponse], Error>
-    func postReview(by id: String, name: String, review: String) -> AnyPublisher<Bool, Error>
+    func postReview(by id: String, name: String, review: String) -> AnyPublisher<[ReviewResponse], Error>
 }
 
 final class RemoteDataSource: NSObject {
@@ -86,8 +86,8 @@ extension RemoteDataSource: RemoteDataSourceProtocol {
         by id: String,
         name: String,
         review: String
-    ) -> AnyPublisher<Bool, Error> {
-        return Future<Bool, Error> { completion in
+    ) -> AnyPublisher<[ReviewResponse], Error> {
+        return Future<[ReviewResponse], Error> { completion in
             if let url = URL(string: Endpoints.Gets.addReview.url) {
                 let params: [String: String] = [
                     "id" : id,
@@ -99,8 +99,8 @@ extension RemoteDataSource: RemoteDataSourceProtocol {
                     .validate()
                     .responseDecodable(of: AddNewReviewResponse.self) { response in
                         switch response.result {
-                        case .success(_):
-                            completion(.success(true))
+                        case .success(let value):
+                            completion(.success(value.customerReviews ?? []))
                         case .failure:
                             completion(.failure(URLError.invalidResponse))
                         }

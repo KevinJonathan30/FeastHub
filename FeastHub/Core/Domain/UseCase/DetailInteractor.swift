@@ -13,6 +13,7 @@ protocol DetailUseCase {
     func getRestaurantIsFavorite(withId id: String) -> AnyPublisher<Bool, Error>
     func addFavoriteRestaurant(restaurant: RestaurantModel) -> AnyPublisher<Bool, Error>
     func deleteFavoriteRestaurant(withId id: String) -> AnyPublisher<Bool, Error>
+    func postReview(withId id: String, name: String, review: String) -> AnyPublisher<[ReviewModel], Error>
 }
 
 class DetailInteractor: DetailUseCase {
@@ -38,5 +39,9 @@ class DetailInteractor: DetailUseCase {
     
     func deleteFavoriteRestaurant(withId id: String) -> AnyPublisher<Bool, Error> {
         return repository.deleteFavoriteRestaurant(withId: id)
+    }
+    
+    func postReview(withId id: String, name: String, review: String) -> AnyPublisher<[ReviewModel], Error> {
+        return repository.postReview(by: id, name: name, review: review)
     }
 }

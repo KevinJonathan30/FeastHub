@@ -12,7 +12,7 @@ protocol RestaurantRepositoryProtocol {
     func getList() -> AnyPublisher<[RestaurantModel], Error>
     func getDetail(by id: String) -> AnyPublisher<RestaurantModel, Error>
     func searchList(by query: String) -> AnyPublisher<[RestaurantModel], Error>
-    func postReview(by id: String, name: String, review: String) -> AnyPublisher<Bool, Error>
+    func postReview(by id: String, name: String, review: String) -> AnyPublisher<[ReviewModel], Error>
     func getFavoriteRestaurants() -> AnyPublisher<[RestaurantModel], Error>
     func getRestaurantIsFavorite(withId id: String) -> AnyPublisher<Bool, Error>
     func addFavoriteRestaurant(from restaurant: RestaurantModel) -> AnyPublisher<Bool, Error>
@@ -60,8 +60,9 @@ extension RestaurantRepository: RestaurantRepositoryProtocol {
         by id: String,
         name: String,
         review: String
-    ) -> AnyPublisher<Bool, Error> {
+    ) -> AnyPublisher<[ReviewModel], Error> {
         return self.remote.postReview(by: id, name: name, review: review)
+            .map { ReviewMapper.mapReviewResponseListToModelList(input: $0) }
             .eraseToAnyPublisher()
     }
     
