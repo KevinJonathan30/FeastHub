@@ -67,8 +67,7 @@ class DetailPresenter: ObservableObject {
         detailUseCase.addFavoriteRestaurant(restaurant: restaurant)
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { _ in },
-                  receiveValue: { isSuccess in
-                print(isSuccess)
+                  receiveValue: { _ in
                 self.getRestaurantIsFavorite()
             })
             .store(in: &cancellables)
@@ -78,8 +77,7 @@ class DetailPresenter: ObservableObject {
         detailUseCase.deleteFavoriteRestaurant(withId: restaurant.id)
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { _ in },
-                  receiveValue: { isSuccess in
-                print(isSuccess)
+                  receiveValue: { _ in
                 self.getRestaurantIsFavorite()
             })
             .store(in: &cancellables)

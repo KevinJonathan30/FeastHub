@@ -187,6 +187,7 @@ extension DetailView {
                     }
                 }.alert("Write a Review", isPresented: self.$presenter.isShowingReviewAlert) {
                     TextField("Review here..", text: self.$presenter.commentQuery)
+                    Button("Cancel", action: {})
                     Button("Submit", action: {
                         self.presenter.postReview()
                     })
