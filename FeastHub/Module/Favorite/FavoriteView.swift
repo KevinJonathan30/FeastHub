@@ -42,17 +42,17 @@ extension FavoriteView {
     @ViewBuilder
     func errorIndicator() -> some View {
         CustomEmptyView(
-            image: "assetSearchNotFound",
+            image: "assetListNotFound",
             title: presenter.errorMessage
-        ).offset(y: 80)
+        )
     }
     
     @ViewBuilder
     func emptyFavorites() -> some View {
         CustomEmptyView(
-            image: "assetNoFavorite",
-            title: "Your favorite is empty"
-        ).offset(y: 80)
+            image: "assetEmpty",
+            title: "Your favorite is so empty, try adding something here?"
+        )
     }
     
     @ViewBuilder

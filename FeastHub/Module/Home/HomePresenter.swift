@@ -61,13 +61,13 @@ class HomePresenter: ObservableObject {
     
     func initSearchRestaurantObserver() {
         $searchQuery
-            .debounce(for: .milliseconds(500), scheduler: DispatchQueue.main)
+            .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
             .removeDuplicates()
-            .sink { [weak self] searchQuery in
-                guard let self = self,
-                      !searchQuery.isEmpty else {
+            .sink { searchQuery in
+                guard !searchQuery.isEmpty else {
                     withAnimation(.spring()) {
-                        self?.restaurants = self?.allRestaurants ?? []
+                        self.restaurants = self.allRestaurants
+                        self.viewState = .loaded
                     }
                     return
                 }
@@ -84,6 +84,13 @@ class HomePresenter: ObservableObject {
                         }
                     }, receiveValue: { restaurants in
                         withAnimation(.spring()) {
+                            guard !searchQuery.isEmpty else {
+                                withAnimation(.spring()) {
+                                    self.restaurants = self.allRestaurants
+                                }
+                                return
+                            }
+                            
                             self.restaurants = restaurants
                             
                             if restaurants.isEmpty {

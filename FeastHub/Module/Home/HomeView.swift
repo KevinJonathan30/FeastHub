@@ -51,17 +51,24 @@ extension HomeView {
     @ViewBuilder
     func errorIndicator() -> some View {
         CustomEmptyView(
-            image: "assetSearchNotFound",
+            image: "assetListNotFound",
             title: presenter.errorMessage
-        ).offset(y: 80)
+        )
     }
     
     @ViewBuilder
     func emptyRestaurants() -> some View {
-        CustomEmptyView(
-            image: "assetNoFavorite",
-            title: "The restaurant is empty"
-        ).offset(y: 80)
+        if self.presenter.searchQuery.isEmpty {
+            CustomEmptyView(
+                image: "assetEmpty",
+                title: "We can't find the list of the restaurants. Please try again later?"
+            )
+        } else {
+            CustomEmptyView(
+                image: "assetSearchNotFound",
+                title: "No search result"
+            )
+        }
     }
     
     @ViewBuilder

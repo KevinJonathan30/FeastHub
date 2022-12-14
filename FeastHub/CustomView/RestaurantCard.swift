@@ -17,7 +17,7 @@ struct RestaurantCard: View {
             content()
         }
         .frame(width: UIScreen.main.bounds.width - 32)
-        .background(Color.brown.opacity(0.2))
+        .background(Color.gray.opacity(0.1))
         .cornerRadius(8)
     }
 }

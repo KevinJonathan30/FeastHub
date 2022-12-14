@@ -66,9 +66,9 @@ extension DetailView {
     @ViewBuilder
     func errorIndicator() -> some View {
         CustomEmptyView(
-            image: "assetSearchNotFound",
+            image: "assetListNotFound",
             title: presenter.errorMessage
-        ).offset(y: 80)
+        )
     }
     
     @ViewBuilder
@@ -99,7 +99,7 @@ extension DetailView {
                         .font(.caption2)
                         .bold()
                         .padding(4)
-                        .background(Color.brown.opacity(0.2))
+                        .background(Color.gray.opacity(0.1))
                         .cornerRadius(8)
                 }
             }
@@ -131,7 +131,7 @@ extension DetailView {
                 Text(food.name)
                     .font(.caption)
                     .padding(4)
-                    .background(Color.brown.opacity(0.2))
+                    .background(Color.gray.opacity(0.1))
                     .cornerRadius(8)
             }
             
@@ -141,7 +141,7 @@ extension DetailView {
                 Text(drink.name)
                     .font(.caption)
                     .padding(4)
-                    .background(Color.brown.opacity(0.2))
+                    .background(Color.gray.opacity(0.1))
                     .cornerRadius(8)
             }
         }.padding(.bottom)
