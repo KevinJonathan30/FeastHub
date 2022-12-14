@@ -112,4 +112,9 @@ class HomePresenter: ObservableObject {
         NavigationLink(destination: router.makeDetailView(for: restaurant)) { content() }
     }
     
+    func linkBuilderToProfile<Content: View>(
+        @ViewBuilder content: () -> Content
+    ) -> some View {
+        NavigationLink(destination: router.makeProfileView) { content() }
+    }
 }

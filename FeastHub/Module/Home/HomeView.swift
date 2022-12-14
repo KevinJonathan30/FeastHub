@@ -24,6 +24,14 @@ struct HomeView: View {
             }
         }
         .navigationBarTitle("FeastHub")
+        .toolbar {
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                self.presenter.linkBuilderToProfile() {
+                    Image(systemName: "person.crop.circle.fill")
+                        .foregroundColor(.blue)
+                }.buttonStyle(PlainButtonStyle())
+            }
+        }
         .onAppear {
             if self.presenter.restaurants.isEmpty {
                 self.presenter.getRestaurantList()

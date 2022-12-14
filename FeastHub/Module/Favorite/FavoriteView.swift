@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct FavoriteView: View {
-    
     @ObservedObject var presenter: FavoritePresenter
     
     var body: some View {
@@ -23,11 +22,20 @@ struct FavoriteView: View {
             case .loaded:
                 content()
             }
-        }.onAppear {
+        }
+        .onAppear {
             self.presenter.getFavoriteRestaurants()
-        }.navigationBarTitle("Favorite")
+        }
+        .navigationBarTitle("Favorite")
+        .toolbar {
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                self.presenter.linkBuilderToProfile() {
+                    Image(systemName: "person.crop.circle.fill")
+                        .foregroundColor(.blue)
+                }.buttonStyle(PlainButtonStyle())
+            }
+        }
     }
-    
 }
 
 extension FavoriteView {

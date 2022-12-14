@@ -13,4 +13,8 @@ class FavoriteRouter {
         let presenter = DetailPresenter(detailUseCase: detailUseCase, restaurant: restaurant)
         return DetailView(presenter: presenter)
     }
+    
+    func makeProfileView() -> some View {
+        return ProfileView()
+    }
 }

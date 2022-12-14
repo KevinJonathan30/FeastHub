@@ -61,6 +61,7 @@
 		5D3541662946481F006470DD /* ReviewMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3541652946481F006470DD /* ReviewMapper.swift */; };
 		5D35416829472E1F006470DD /* ViewStateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D35416729472E1F006470DD /* ViewStateExtension.swift */; };
 		5D35416C294854C9006470DD /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = 5D35416B294854C9006470DD /* WrappingHStack */; };
+		5DFE6869294A12B0002F37E7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFE6868294A12B0002F37E7 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		5D354163294642DA006470DD /* MenuMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuMapper.swift; sourceTree = "<group>"; };
 		5D3541652946481F006470DD /* ReviewMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMapper.swift; sourceTree = "<group>"; };
 		5D35416729472E1F006470DD /* ViewStateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStateExtension.swift; sourceTree = "<group>"; };
+		5DFE6868294A12B0002F37E7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +251,7 @@
 				5D3541162944C4B0006470DD /* Detail */,
 				5D3541262944C4B0006470DD /* Favorite */,
 				5D35410E2944C4B0006470DD /* Home */,
+				5DFE6868294A12B0002F37E7 /* ProfileView.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				5D3540CD2944C39C006470DD /* APICall.swift in Sources */,
 				5D3541372944C4B0006470DD /* DetailPresenter.swift in Sources */,
 				5D35409F2944BEA9006470DD /* CategoryEntity.swift in Sources */,
+				5DFE6869294A12B0002F37E7 /* ProfileView.swift in Sources */,
 				5D35415C294636D2006470DD /* RestaurantMapper.swift in Sources */,
 				5D3541492944C70F006470DD /* RestaurantListResponse.swift in Sources */,
 				5D35409D2944BE80006470DD /* LocaleDataSource.swift in Sources */,
