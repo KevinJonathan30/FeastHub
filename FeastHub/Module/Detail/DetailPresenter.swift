@@ -45,7 +45,8 @@ class DetailPresenter: ObservableObject {
                 case .finished:
                     self.viewState = .loaded
                 }
-            }, receiveValue: { restaurant in
+            }, receiveValue: { [weak self] restaurant in
+                guard let self = self else { return }
                 withAnimation(.spring()) {
                     self.restaurant = restaurant
                 }
@@ -57,7 +58,8 @@ class DetailPresenter: ObservableObject {
         detailUseCase.getRestaurantIsFavorite(withId: self.restaurant.id)
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { _ in },
-                  receiveValue: { isFavorite in
+                  receiveValue: { [weak self] isFavorite in
+                guard let self = self else { return }
                 self.isFavorite = isFavorite
             })
             .store(in: &cancellables)
@@ -67,7 +69,8 @@ class DetailPresenter: ObservableObject {
         detailUseCase.addFavoriteRestaurant(restaurant: restaurant)
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { _ in },
-                  receiveValue: { _ in
+                  receiveValue: { [weak self] _ in
+                guard let self = self else { return }
                 self.getRestaurantIsFavorite()
             })
             .store(in: &cancellables)
@@ -77,7 +80,8 @@ class DetailPresenter: ObservableObject {
         detailUseCase.deleteFavoriteRestaurant(withId: restaurant.id)
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { _ in },
-                  receiveValue: { _ in
+                  receiveValue: { [weak self] _ in
+                guard let self = self else { return }
                 self.getRestaurantIsFavorite()
             })
             .store(in: &cancellables)
@@ -95,7 +99,8 @@ class DetailPresenter: ObservableObject {
                     self.alertTitle = "Review submitted!"
                 }
                 self.isShowingPostReviewAlert = true
-            }, receiveValue: { result in
+            }, receiveValue: { [weak self] result in
+                guard let self = self else { return }
                 withAnimation(.spring()) {
                     self.restaurant.customerReviews = result
                 }

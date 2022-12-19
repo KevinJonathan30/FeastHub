@@ -37,7 +37,8 @@ class FavoritePresenter: ObservableObject {
                 case .finished:
                     break
                 }
-            }, receiveValue: { restaurants in
+            }, receiveValue: { [weak self] restaurants in
+                guard let self = self else { return }
                 withAnimation(.spring()) {
                     self.restaurants = restaurants
                     

@@ -44,7 +44,8 @@ class HomePresenter: ObservableObject {
                 case .finished:
                     break
                 }
-            }, receiveValue: { restaurants in
+            }, receiveValue: { [weak self] restaurants in
+                guard let self = self else { return }
                 withAnimation(.spring()) {
                     self.restaurants = restaurants
                     self.allRestaurants = restaurants
@@ -63,46 +64,52 @@ class HomePresenter: ObservableObject {
         $searchQuery
             .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
             .removeDuplicates()
-            .sink { searchQuery in
-                guard !searchQuery.isEmpty else {
+            .sink { [weak self] searchQuery in
+                guard let self = self,
+                      !searchQuery.isEmpty else {
                     withAnimation(.spring()) {
-                        self.restaurants = self.allRestaurants
-                        self.viewState = .loaded
+                        self?.restaurants = self?.allRestaurants ?? []
+                        self?.viewState = .loaded
                     }
                     return
                 }
-                self.viewState = .loading
-                self.homeUseCase.searchList(by: searchQuery)
-                    .receive(on: RunLoop.main)
-                    .sink(receiveCompletion: { completion in
-                        switch completion {
-                        case .failure(let error):
-                            self.errorMessage = error.localizedDescription
-                            self.viewState = .fail
-                        case .finished:
-                            break
-                        }
-                    }, receiveValue: { restaurants in
-                        withAnimation(.spring()) {
-                            guard !searchQuery.isEmpty else {
-                                withAnimation(.spring()) {
-                                    self.restaurants = self.allRestaurants
-                                }
-                                return
-                            }
-                            
-                            self.restaurants = restaurants
-                            
-                            if restaurants.isEmpty {
-                                self.viewState = .empty
-                            } else {
-                                self.viewState = .loaded
-                            }
-                        }
-                    })
-                    .store(in: &self.cancellables)
+                self.getSearchList(searchQuery: searchQuery)
             }
             .store(in: &cancellables)
+    }
+    
+    func getSearchList(searchQuery: String) {
+        self.viewState = .loading
+        self.homeUseCase.searchList(by: searchQuery)
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .failure(let error):
+                    self.errorMessage = error.localizedDescription
+                    self.viewState = .fail
+                case .finished:
+                    break
+                }
+            }, receiveValue: { [weak self] restaurants in
+                guard let self = self else { return }
+                withAnimation(.spring()) {
+                    guard !searchQuery.isEmpty else {
+                        withAnimation(.spring()) {
+                            self.restaurants = self.allRestaurants
+                        }
+                        return
+                    }
+                    
+                    self.restaurants = restaurants
+                    
+                    if restaurants.isEmpty {
+                        self.viewState = .empty
+                    } else {
+                        self.viewState = .loaded
+                    }
+                }
+            })
+            .store(in: &self.cancellables)
     }
     
     func linkBuilder<Content: View>(
