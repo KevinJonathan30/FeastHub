@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,8 +25,6 @@
 		5D3540B52944C21B006470DD /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3540B42944C21B006470DD /* HomeInteractor.swift */; };
 		5D3540B72944C236006470DD /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3540B62944C236006470DD /* DetailInteractor.swift */; };
 		5D3540BD2944C28D006470DD /* FavoriteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3540BC2944C28D006470DD /* FavoriteInteractor.swift */; };
-		5D3540C12944C2E5006470DD /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3540C02944C2E5006470DD /* ColorExtension.swift */; };
-		5D3540C32944C305006470DD /* CustomErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3540C22944C305006470DD /* CustomErrorExtension.swift */; };
 		5D3540CD2944C39C006470DD /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3540CC2944C39C006470DD /* APICall.swift */; };
 		5D3540CF2944C3C8006470DD /* CustomEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3540CE2944C3C8006470DD /* CustomEmptyView.swift */; };
 		5D3540D22944C3F1006470DD /* CustomIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3540D12944C3F1006470DD /* CustomIcon.swift */; };
@@ -56,8 +54,10 @@
 		5D3541622946405E006470DD /* CategoryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3541612946405E006470DD /* CategoryMapper.swift */; };
 		5D354164294642DA006470DD /* MenuMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D354163294642DA006470DD /* MenuMapper.swift */; };
 		5D3541662946481F006470DD /* ReviewMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3541652946481F006470DD /* ReviewMapper.swift */; };
-		5D35416829472E1F006470DD /* ViewStateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D35416729472E1F006470DD /* ViewStateExtension.swift */; };
 		5D35416C294854C9006470DD /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = 5D35416B294854C9006470DD /* WrappingHStack */; };
+		5D46F1C8295609DF006798F0 /* ViewStateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D46F1C7295609DF006798F0 /* ViewStateExtension.swift */; };
+		5D46F1CC29560A2C006798F0 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D46F1CB29560A2C006798F0 /* ColorExtension.swift */; };
+		5DC3F7492956165C00160756 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 5DC3F7482956165C00160756 /* Core */; };
 		5DFE6869294A12B0002F37E7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFE6868294A12B0002F37E7 /* ProfileView.swift */; };
 		5DFE686E294A1AA5002F37E7 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5DFE686D294A1AA5002F37E7 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
@@ -98,8 +98,6 @@
 		5D3540B42944C21B006470DD /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		5D3540B62944C236006470DD /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		5D3540BC2944C28D006470DD /* FavoriteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteInteractor.swift; sourceTree = "<group>"; };
-		5D3540C02944C2E5006470DD /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
-		5D3540C22944C305006470DD /* CustomErrorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomErrorExtension.swift; sourceTree = "<group>"; };
 		5D3540CC2944C39C006470DD /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
 		5D3540CE2944C3C8006470DD /* CustomEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEmptyView.swift; sourceTree = "<group>"; };
 		5D3540D12944C3F1006470DD /* CustomIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIcon.swift; sourceTree = "<group>"; };
@@ -128,7 +126,9 @@
 		5D3541612946405E006470DD /* CategoryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMapper.swift; sourceTree = "<group>"; };
 		5D354163294642DA006470DD /* MenuMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuMapper.swift; sourceTree = "<group>"; };
 		5D3541652946481F006470DD /* ReviewMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMapper.swift; sourceTree = "<group>"; };
-		5D35416729472E1F006470DD /* ViewStateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStateExtension.swift; sourceTree = "<group>"; };
+		5D46F1C4295604A1006798F0 /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
+		5D46F1C7295609DF006798F0 /* ViewStateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStateExtension.swift; sourceTree = "<group>"; };
+		5D46F1CB29560A2C006798F0 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		5DFE6868294A12B0002F37E7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		5DFE686D294A1AA5002F37E7 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +143,7 @@
 				5D3540902944BDA9006470DD /* RealmSwift in Frameworks */,
 				5D35408E2944BDA9006470DD /* Realm in Frameworks */,
 				5D35416C294854C9006470DD /* WrappingHStack in Frameworks */,
+				5DC3F7492956165C00160756 /* Core in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +168,9 @@
 			isa = PBXGroup;
 			children = (
 				5D35405B2944B99A006470DD /* FeastHub */,
+				5D46F1C4295604A1006798F0 /* Core */,
 				5D35405A2944B99A006470DD /* Products */,
+				5D46F1CD29560C35006798F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -335,9 +338,8 @@
 		5D3540BF2944C2D5006470DD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				5D3540C02944C2E5006470DD /* ColorExtension.swift */,
-				5D3540C22944C305006470DD /* CustomErrorExtension.swift */,
-				5D35416729472E1F006470DD /* ViewStateExtension.swift */,
+				5D46F1C7295609DF006798F0 /* ViewStateExtension.swift */,
+				5D46F1CB29560A2C006798F0 /* ColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -412,6 +414,13 @@
 			path = CustomView;
 			sourceTree = "<group>";
 		};
+		5D46F1CD29560C35006798F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -435,6 +444,7 @@
 				5D3540922944BDDC006470DD /* Alamofire */,
 				5D3541462944C588006470DD /* CachedAsyncImage */,
 				5D35416B294854C9006470DD /* WrappingHStack */,
+				5DC3F7482956165C00160756 /* Core */,
 			);
 			productName = FeastHub;
 			productReference = 5D3540592944B99A006470DD /* FeastHub.app */;
@@ -500,7 +510,7 @@
 				};
 			};
 			buildConfigurationList = 5D3540542944B999006470DD /* Build configuration list for PBXProject "FeastHub" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -588,6 +598,7 @@
 				5D3541332944C4B0006470DD /* HomePresenter.swift in Sources */,
 				5D35405F2944B99A006470DD /* ContentView.swift in Sources */,
 				5D3541662946481F006470DD /* ReviewMapper.swift in Sources */,
+				5D46F1C8295609DF006798F0 /* ViewStateExtension.swift in Sources */,
 				5D35416029463BEE006470DD /* ReviewModel.swift in Sources */,
 				5D35414F2944C916006470DD /* RestaurantDetailResponse.swift in Sources */,
 				5D3540B52944C21B006470DD /* HomeInteractor.swift in Sources */,
@@ -605,9 +616,9 @@
 				5D3541352944C4B0006470DD /* RestaurantCard.swift in Sources */,
 				5D3541382944C4B0006470DD /* DetailView.swift in Sources */,
 				5D3541532944C970006470DD /* RestaurantSearchResponse.swift in Sources */,
-				5D35416829472E1F006470DD /* ViewStateExtension.swift in Sources */,
 				5D3540A52944BF11006470DD /* RemoteDataSource.swift in Sources */,
 				5D3541362944C4B0006470DD /* HomeRouter.swift in Sources */,
+				5D46F1CC29560A2C006798F0 /* ColorExtension.swift in Sources */,
 				5D35415E29463B06006470DD /* MenuModel.swift in Sources */,
 				5D35414B2944C83B006470DD /* MenuResponse.swift in Sources */,
 				5D35413F2944C4B0006470DD /* FavoritePresenter.swift in Sources */,
@@ -619,9 +630,7 @@
 				5D3541492944C70F006470DD /* RestaurantListResponse.swift in Sources */,
 				5D35409D2944BE80006470DD /* LocaleDataSource.swift in Sources */,
 				5D35415A29462A7B006470DD /* MenuEntity.swift in Sources */,
-				5D3540C32944C305006470DD /* CustomErrorExtension.swift in Sources */,
 				5D3540B72944C236006470DD /* DetailInteractor.swift in Sources */,
-				5D3540C12944C2E5006470DD /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1004,6 +1013,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5D35416A294854C9006470DD /* XCRemoteSwiftPackageReference "WrappingHStack" */;
 			productName = WrappingHStack;
+		};
+		5DC3F7482956165C00160756 /* Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Core;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

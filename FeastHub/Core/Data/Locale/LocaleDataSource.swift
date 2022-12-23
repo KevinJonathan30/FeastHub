@@ -8,6 +8,7 @@
 import Foundation
 import RealmSwift
 import Combine
+import Core
 
 protocol LocaleDataSourceProtocol: AnyObject {
     func getFavoriteRestaurants() -> AnyPublisher<[RestaurantEntity], Error>
@@ -100,17 +101,5 @@ extension LocaleDataSource: LocaleDataSourceProtocol {
                 completion(.failure(DatabaseError.invalidInstance))
             }
         }.eraseToAnyPublisher()
-    }
-}
-
-extension Results {
-    func toArray<T>(ofType: T.Type) -> [T] {
-        var array = [T]()
-        for index in 0 ..< count {
-            if let result = self[index] as? T {
-                array.append(result)
-            }
-        }
-        return array
     }
 }
