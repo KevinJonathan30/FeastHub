@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Core
 
 struct ProfileView: View {
     var body: some View {
@@ -25,22 +26,20 @@ struct ProfileView: View {
                     Text("Kevin Jonathan")
                         .font(.title)
                     
-                    Text("iOS Engineer at Blibli.com")
+                    Text("job_position".localized())
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                     
                     Divider()
                     
-                    Text("About Me")
+                    Text("about_me".localized())
                         .font(.title2)
                     
-                    Text("I am Kevin Jonathan, a mobile development engineer proficient in iOS app development. I have 4+ years of experience in mobile application engineering.")
-                    
-                    Text("I am an alumni from Petra Christian University and Apple Developer Academy. I am currently working as an iOS Engineer at Blibli.com!")
+                    Text("about_description".localized())
                 }
             }
             .padding()
         }
-        .navigationTitle("My Profile")
+        .navigationTitle("my_profile".localized())
     }
 }

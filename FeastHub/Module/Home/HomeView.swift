@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Core
 
 struct HomeView: View {
     @ObservedObject var presenter: HomePresenter
@@ -23,7 +24,7 @@ struct HomeView: View {
                 content()
             }
         }
-        .navigationBarTitle("FeastHub")
+        .navigationBarTitle("home_title".localized())
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 self.presenter.linkBuilderToProfile {
@@ -51,7 +52,7 @@ extension HomeView {
     @ViewBuilder
     func loadingIndicator() -> some View {
         VStack {
-            Text("Loading...")
+            Text("loading".localized())
             ProgressView()
         }
     }
@@ -69,12 +70,12 @@ extension HomeView {
         if self.presenter.searchQuery.isEmpty {
             CustomEmptyView(
                 image: "assetEmpty",
-                title: "We can't find the list of the restaurants. Please try again later?"
+                title: "restaurant_empty".localized()
             )
         } else {
             CustomEmptyView(
                 image: "assetSearchNotFound",
-                title: "No search result"
+                title: "no_search_result".localized()
             )
         }
     }

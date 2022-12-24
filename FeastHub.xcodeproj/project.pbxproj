@@ -31,6 +31,7 @@
 		5D35416C294854C9006470DD /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = 5D35416B294854C9006470DD /* WrappingHStack */; };
 		5D46F1C8295609DF006798F0 /* ViewStateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D46F1C7295609DF006798F0 /* ViewStateExtension.swift */; };
 		5D46F1CC29560A2C006798F0 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D46F1CB29560A2C006798F0 /* ColorExtension.swift */; };
+		5D770D262957308700FF7CCB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5D770D242957307300FF7CCB /* Localizable.strings */; };
 		5DC3F7492956165C00160756 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 5DC3F7482956165C00160756 /* Core */; };
 		5DC3F7542957253500160756 /* Restaurant in Frameworks */ = {isa = PBXBuildFile; productRef = 5DC3F7532957253500160756 /* Restaurant */; };
 		5DFE6869294A12B0002F37E7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFE6868294A12B0002F37E7 /* ProfileView.swift */; };
@@ -78,6 +79,8 @@
 		5D46F1C4295604A1006798F0 /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
 		5D46F1C7295609DF006798F0 /* ViewStateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStateExtension.swift; sourceTree = "<group>"; };
 		5D46F1CB29560A2C006798F0 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		5D770D232957307300FF7CCB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5D770D252957307700FF7CCB /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5DC3F74C2956FBF500160756 /* Restaurant */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Restaurant; sourceTree = "<group>"; };
 		5DFE6868294A12B0002F37E7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		5DFE686D294A1AA5002F37E7 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -146,6 +149,7 @@
 				5D3540602944B99F006470DD /* Assets.xcassets */,
 				5D3540622944B99F006470DD /* Preview Content */,
 				5DFE686D294A1AA5002F37E7 /* .swiftlint.yml */,
+				5D770D242957307300FF7CCB /* Localizable.strings */,
 			);
 			path = FeastHub;
 			sourceTree = "<group>";
@@ -182,7 +186,7 @@
 				5D3541162944C4B0006470DD /* Detail */,
 				5D3541262944C4B0006470DD /* Favorite */,
 				5D35410E2944C4B0006470DD /* Home */,
-				5DFE6868294A12B0002F37E7 /* ProfileView.swift */,
+				5D770D272957321A00FF7CCB /* Profile */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -257,6 +261,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5D770D272957321A00FF7CCB /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				5DFE6868294A12B0002F37E7 /* ProfileView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +366,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				id,
 				Base,
 			);
 			mainGroup = 5D3540502944B999006470DD;
@@ -380,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DFE686E294A1AA5002F37E7 /* .swiftlint.yml in Resources */,
+				5D770D262957308700FF7CCB /* Localizable.strings in Resources */,
 				5D3540642944B99F006470DD /* Preview Assets.xcassets in Resources */,
 				5D3540612944B99F006470DD /* Assets.xcassets in Resources */,
 			);
@@ -476,6 +490,18 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		5D770D242957307300FF7CCB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D770D232957307300FF7CCB /* en */,
+				5D770D252957307700FF7CCB /* id */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		5D35407B2944B99F006470DD /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -527,7 +553,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -581,7 +607,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

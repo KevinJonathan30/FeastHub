@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Core
 
 struct ContentView: View {
     @EnvironmentObject var homePresenter: HomePresenter
@@ -16,13 +17,13 @@ struct ContentView: View {
             NavigationStack {
                 HomeView(presenter: homePresenter)
             }.tabItem {
-                TabItem(imageName: "house", title: "Home")
+                TabItem(imageName: "house", title: "home_title".localized())
             }
             
             NavigationStack {
                 FavoriteView(presenter: favoritePresenter)
             }.tabItem {
-                TabItem(imageName: "star.fill", title: "Favorite")
+                TabItem(imageName: "star.fill", title: "favorite_title".localized())
             }
         }
     }

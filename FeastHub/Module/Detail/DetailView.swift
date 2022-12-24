@@ -9,6 +9,7 @@ import SwiftUI
 import CachedAsyncImage
 import WrappingHStack
 import Restaurant
+import Core
 
 struct DetailView: View {
     @ObservedObject var presenter: DetailPresenter
@@ -35,7 +36,7 @@ struct DetailView: View {
             self.presenter.getRestaurantDetail()
             self.presenter.getRestaurantIsFavorite()
         }
-        .navigationBarTitle("Detail", displayMode: .inline)
+        .navigationBarTitle("detail_title".localized(), displayMode: .inline)
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 Button {
@@ -52,8 +53,8 @@ struct DetailView: View {
         }.alert(isPresented: self.$presenter.isShowingPostReviewAlert) {
             Alert(
                 title: Text(self.presenter.alertTitle),
-                  message: Text(self.presenter.errorMessageAlert),
-                  dismissButton: .default(Text("OK"))
+                message: Text(self.presenter.errorMessageAlert),
+                dismissButton: .default(Text("ok".localized()))
             )
         }
     }
@@ -65,7 +66,7 @@ extension DetailView {
     @ViewBuilder
     func loadingIndicator() -> some View {
         VStack {
-            Text("Loading...")
+            Text("loading".localized())
             ProgressView()
         }
     }
@@ -118,7 +119,7 @@ extension DetailView {
     @ViewBuilder
     func description(restaurant: RestaurantModel) -> some View {
         VStack(alignment: .leading) {
-            subheaderTitle("Description")
+            subheaderTitle("description".localized())
                 .padding(.vertical)
             
             Text(restaurant.description)
@@ -129,10 +130,10 @@ extension DetailView {
     @ViewBuilder
     func menu(restaurant: RestaurantModel) -> some View {
         VStack(alignment: .leading) {
-            subheaderTitle("Menu")
+            subheaderTitle("menu".localized())
                 .padding(.vertical)
             
-            subheader2Title("Foods")
+            subheader2Title("foods".localized())
             
             WrappingHStack(restaurant.menus.foods, id: \.self, lineSpacing: 4) { food in
                 Text(food.name)
@@ -142,7 +143,7 @@ extension DetailView {
                     .cornerRadius(8)
             }
             
-            subheader2Title("Drinks")
+            subheader2Title("drinks".localized())
             
             WrappingHStack(restaurant.menus.drinks, id: \.self, lineSpacing: 4) { drink in
                 Text(drink.name)
@@ -157,7 +158,7 @@ extension DetailView {
     @ViewBuilder
     func location(restaurant: RestaurantModel) -> some View {
         VStack(alignment: .leading) {
-            subheaderTitle("Location")
+            subheaderTitle("location".localized())
                 .padding(.vertical)
             
             HStack {
@@ -173,7 +174,7 @@ extension DetailView {
     func review(restaurant: RestaurantModel) -> some View {
         VStack(alignment: .leading) {
             HStack {
-                subheaderTitle("Customer Reviews")
+                subheaderTitle("customer_reviews".localized())
                 
                 Spacer()
                 
@@ -183,17 +184,17 @@ extension DetailView {
                     HStack {
                         Image(systemName: "square.and.pencil")
                         
-                        Text("Write a Review")
+                        Text("write_a_review".localized())
                             .font(.system(size: 15))
                     }
-                }.alert("Write a Review", isPresented: self.$presenter.isShowingReviewAlert) {
-                    TextField("Review here..", text: self.$presenter.commentQuery)
-                    Button("Cancel", action: {})
-                    Button("Submit", action: {
+                }.alert("write_a_review".localized(), isPresented: self.$presenter.isShowingReviewAlert) {
+                    TextField("review_here".localized(), text: self.$presenter.commentQuery)
+                    Button("cancel".localized(), action: {})
+                    Button("submit".localized(), action: {
                         self.presenter.postReview()
                     })
                 } message: {
-                    Text("Please enter your review below.")
+                    Text("review_cta".localized())
                 }
             }.padding(.vertical)
             

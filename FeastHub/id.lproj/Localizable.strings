@@ -1,0 +1,43 @@
+/* 
+  Localizable.strings
+  FeastHub
+
+  Created by Kevin Jonathan on 24/12/22.
+  
+*/
+
+// MARK: General
+"home_title" = "Beranda";
+"favorite_title" = "Favorit";
+"loading" = "Memuat..";
+"restaurant_empty" = "Kita tidak dapat mencari daftar restaurant. Coba lagi nanti?";
+"no_search_result" = "Tidak ada hasil pencarian";
+"favorite_empty" = "Favoritmu kosong, coba tambah sesuatu disini?";
+"cancel" = "Batal";
+"submit" = "Kirim";
+"ok" = "OK";
+
+// MARK: Detail
+"detail_title" = "Detail";
+"description" = "Deskripsi";
+"menu" = "Menu";
+"foods" = "Makanan";
+"drinks" = "Minuman";
+"location" = "Lokasi";
+"customer_reviews" = "Ulasan Pelanggan";
+"write_a_review" = "Tulis Ulasan";
+"review_cta" = "Tolong Masukkan Ulasan Dibawah Ini.";
+"review_here" = "Ulas disini...";
+"review_submitted" = "Ulasan telah dikirim!";
+
+// MARK: Profile
+"my_profile" = "Profil Saya";
+"job_position" = "iOS Engineer di Blibli.com";
+"about_me" = "Tentang Saya";
+"about_description" = "Saya Kevin Jonathan, seorang mobile development engineer yang mumpuni di bidang pengembangan aplikasi iOS. Saya memiliki 4 tahun lebih pengalaman di pengembangan aplikasi mobile.\nSaya adalah alumni dari Universitas Kristen Petra dan Apple Developer Academy. Saya sedang bekerja sebagai iOS Engineer di Blibli.com!";
+
+// MARK: Data
+"server_error" = "Server merespon dengan sampah.";
+"url_unreachable" = "URL tidak dapat dicapai.";
+"database_error" = "Tidak dapat menginisialisasi database.";
+"request_failed" = "Permintaanmu gagal.";

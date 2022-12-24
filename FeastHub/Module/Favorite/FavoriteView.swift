@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Core
 
 struct FavoriteView: View {
     @ObservedObject var presenter: FavoritePresenter
@@ -26,7 +27,7 @@ struct FavoriteView: View {
         .onAppear {
             self.presenter.getFavoriteRestaurants()
         }
-        .navigationBarTitle("Favorite")
+        .navigationBarTitle("favorite_title".localized())
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 self.presenter.linkBuilderToProfile {
@@ -42,7 +43,7 @@ extension FavoriteView {
     @ViewBuilder
     func loadingIndicator() -> some View {
         VStack {
-            Text("Loading...")
+            Text("loading".localized())
             ProgressView()
         }
     }
@@ -59,7 +60,7 @@ extension FavoriteView {
     func emptyFavorites() -> some View {
         CustomEmptyView(
             image: "assetEmpty",
-            title: "Your favorite is so empty, try adding something here?"
+            title: "favorite_empty".localized()
         )
     }
     

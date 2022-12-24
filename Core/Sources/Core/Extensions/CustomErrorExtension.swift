@@ -13,8 +13,8 @@ public enum URLError: LocalizedError {
     
     public var errorDescription: String? {
         switch self {
-        case .invalidResponse: return "The server responded with garbage."
-        case .addressUnreachable(let url): return "\(url.absoluteString) is unreachable."
+        case .invalidResponse: return "server_error".localized()
+        case .addressUnreachable(_): return "url_unreachable".localized()
         }
     }
 }
@@ -25,8 +25,8 @@ public enum DatabaseError: LocalizedError {
     
     public var errorDescription: String? {
         switch self {
-        case .invalidInstance: return "Database can't instance."
-        case .requestFailed: return "Your request failed."
+        case .invalidInstance: return "database_error".localized()
+        case .requestFailed: return "request_failed".localized()
         }
     }
 }
