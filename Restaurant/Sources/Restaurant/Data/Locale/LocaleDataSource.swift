@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 import Combine
-import Core
+import CorePackage
 
 public protocol LocaleDataSourceProtocol: AnyObject {
     func getFavoriteRestaurants() -> AnyPublisher<[RestaurantEntity], Error>

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Core
+import CorePackage
 
 struct ProfileView: View {
     var body: some View {

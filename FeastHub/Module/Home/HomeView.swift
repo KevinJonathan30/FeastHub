@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Core
+import CorePackage
 
 struct HomeView: View {
     @ObservedObject var presenter: HomePresenter

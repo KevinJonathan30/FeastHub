@@ -32,7 +32,6 @@
 		5D46F1C8295609DF006798F0 /* ViewStateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D46F1C7295609DF006798F0 /* ViewStateExtension.swift */; };
 		5D46F1CC29560A2C006798F0 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D46F1CB29560A2C006798F0 /* ColorExtension.swift */; };
 		5D770D262957308700FF7CCB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5D770D242957307300FF7CCB /* Localizable.strings */; };
-		5DC3F7492956165C00160756 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 5DC3F7482956165C00160756 /* Core */; };
 		5DC3F7542957253500160756 /* Restaurant in Frameworks */ = {isa = PBXBuildFile; productRef = 5DC3F7532957253500160756 /* Restaurant */; };
 		5DFE6869294A12B0002F37E7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFE6868294A12B0002F37E7 /* ProfileView.swift */; };
 		5DFE686E294A1AA5002F37E7 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5DFE686D294A1AA5002F37E7 /* .swiftlint.yml */; };
@@ -76,7 +75,6 @@
 		5D3541282944C4B0006470DD /* FavoritePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
 		5D35412A2944C4B0006470DD /* FavoriteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		5D35412D2944C4B0006470DD /* FavoriteRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteRouter.swift; sourceTree = "<group>"; };
-		5D46F1C4295604A1006798F0 /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
 		5D46F1C7295609DF006798F0 /* ViewStateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStateExtension.swift; sourceTree = "<group>"; };
 		5D46F1CB29560A2C006798F0 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		5D770D232957307300FF7CCB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 				5D3540902944BDA9006470DD /* RealmSwift in Frameworks */,
 				5D35408E2944BDA9006470DD /* Realm in Frameworks */,
 				5D35416C294854C9006470DD /* WrappingHStack in Frameworks */,
-				5DC3F7492956165C00160756 /* Core in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,7 +120,6 @@
 			children = (
 				5D35405B2944B99A006470DD /* FeastHub */,
 				5DC3F74C2956FBF500160756 /* Restaurant */,
-				5D46F1C4295604A1006798F0 /* Core */,
 				5D35405A2944B99A006470DD /* Products */,
 				5D46F1CD29560C35006798F0 /* Frameworks */,
 			);
@@ -294,7 +290,6 @@
 				5D3540922944BDDC006470DD /* Alamofire */,
 				5D3541462944C588006470DD /* CachedAsyncImage */,
 				5D35416B294854C9006470DD /* WrappingHStack */,
-				5DC3F7482956165C00160756 /* Core */,
 				5DC3F7532957253500160756 /* Restaurant */,
 			);
 			productName = FeastHub;
@@ -375,6 +370,7 @@
 				5D3540912944BDDB006470DD /* XCRemoteSwiftPackageReference "Alamofire" */,
 				5D3541452944C588006470DD /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
 				5D35416A294854C9006470DD /* XCRemoteSwiftPackageReference "WrappingHStack" */,
+				5D404850295783F900813249 /* XCRemoteSwiftPackageReference "iOS-FeastHub-CorePackage" */,
 			);
 			productRefGroup = 5D35405A2944B99A006470DD /* Products */;
 			projectDirPath = "";
@@ -825,6 +821,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		5D404850295783F900813249 /* XCRemoteSwiftPackageReference "iOS-FeastHub-CorePackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/KevinJonathan30/iOS-FeastHub-CorePackage";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -852,10 +856,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5D35416A294854C9006470DD /* XCRemoteSwiftPackageReference "WrappingHStack" */;
 			productName = WrappingHStack;
-		};
-		5DC3F7482956165C00160756 /* Core */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Core;
 		};
 		5DC3F7532957253500160756 /* Restaurant */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 import Combine
-import Core
+import CorePackage
 
 public protocol RemoteDataSourceProtocol: AnyObject {
     func getList() -> AnyPublisher<[RestaurantResponse], Error>
