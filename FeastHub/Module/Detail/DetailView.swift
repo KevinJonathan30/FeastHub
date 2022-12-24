@@ -8,6 +8,7 @@
 import SwiftUI
 import CachedAsyncImage
 import WrappingHStack
+import Restaurant
 
 struct DetailView: View {
     @ObservedObject var presenter: DetailPresenter

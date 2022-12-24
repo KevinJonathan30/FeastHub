@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CachedAsyncImage
+import Restaurant
 
 struct RestaurantCard: View {
     var restaurant: RestaurantModel
@@ -53,26 +54,6 @@ extension RestaurantCard {
                 trailing: 16
             )
         )
-    }
-    
-}
-
-struct RestaurantCard_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        let restaurant = RestaurantModel(
-            id: UUID().uuidString,
-            name: "Resto Mantap Jiwa",
-            description: "Banyak ayam geprek disini",
-            pictureId: "14",
-            city: "Surabaya",
-            rating: 5.0,
-            address: "",
-            categories: [],
-            menus: MenuModel(),
-            customerReviews: []
-        )
-        return RestaurantCard(restaurant: restaurant)
     }
     
 }

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import Restaurant
 
 class DetailPresenter: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []

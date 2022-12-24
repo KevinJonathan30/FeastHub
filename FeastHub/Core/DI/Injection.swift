@@ -7,6 +7,9 @@
 
 import Foundation
 import RealmSwift
+import Core
+import Restaurant
+import SwiftUI
 
 final class Injection: NSObject {
     private func provideRepository() -> RestaurantRepositoryProtocol {

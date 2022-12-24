@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Restaurant
 
 class FavoriteRouter {
     func makeDetailView(for restaurant: RestaurantModel) -> some View {
