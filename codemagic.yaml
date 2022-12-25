@@ -26,4 +26,4 @@ workflows:
     publishing:
       email:
         recipients:
-          - kevinjonathan3010@gmail.com # Isikan email untuk notifikasi status building.
+          - kevinjonathan3010@gmail.com
