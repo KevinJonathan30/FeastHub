@@ -79,7 +79,7 @@
 		5D46F1CB29560A2C006798F0 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		5D770D232957307300FF7CCB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5D770D252957307700FF7CCB /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
-		5DC3F74C2956FBF500160756 /* Restaurant */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Restaurant; sourceTree = "<group>"; };
+		5DEB86292957FD15005BC37A /* Restaurant */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Restaurant; path = ../Restaurant; sourceTree = "<group>"; };
 		5DFE6868294A12B0002F37E7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		5DFE686D294A1AA5002F37E7 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,7 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				5D35405B2944B99A006470DD /* FeastHub */,
-				5DC3F74C2956FBF500160756 /* Restaurant */,
+				5DEB86282957FD14005BC37A /* Packages */,
 				5D35405A2944B99A006470DD /* Products */,
 				5D46F1CD29560C35006798F0 /* Frameworks */,
 			);
@@ -265,6 +265,14 @@
 				5DFE6868294A12B0002F37E7 /* ProfileView.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		5DEB86282957FD14005BC37A /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				5DEB86292957FD15005BC37A /* Restaurant */,
+			);
+			name = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
