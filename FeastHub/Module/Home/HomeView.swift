@@ -91,6 +91,13 @@ extension HomeView {
                     ZStack {
                         self.presenter.linkBuilder(for: restaurant) {
                             RestaurantCard(restaurant: restaurant)
+                                .contextMenu {
+                                    self.presenter.linkBuilder(for: restaurant) {
+                                        Button {} label: {
+                                            Label("view_detail".localized(), systemImage: "cup.and.saucer.fill")
+                                        }
+                                    }
+                                }
                         }.buttonStyle(PlainButtonStyle())
                     }.padding(8)
                 }

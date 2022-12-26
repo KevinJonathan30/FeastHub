@@ -10,6 +10,7 @@ import Combine
 
 public protocol FavoriteUseCase {
     func getFavoriteRestaurants() -> AnyPublisher<[RestaurantModel], Error>
+    func deleteFavoriteRestaurant(withId id: String) -> AnyPublisher<Bool, Error>
 }
 
 public class FavoriteInteractor: FavoriteUseCase {
@@ -22,4 +23,9 @@ public class FavoriteInteractor: FavoriteUseCase {
     public func getFavoriteRestaurants() -> AnyPublisher<[RestaurantModel], Error> {
         return repository.getFavoriteRestaurants()
     }
+    
+    public func deleteFavoriteRestaurant(withId id: String) -> AnyPublisher<Bool, Error> {
+        return repository.deleteFavoriteRestaurant(withId: id)
+    }
+    
 }

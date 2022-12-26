@@ -53,6 +53,17 @@ class FavoritePresenter: ObservableObject {
             .store(in: &cancellables)
     }
     
+    func deleteFavoriteRestaurant(withId id: String) {
+        favoriteUseCase.deleteFavoriteRestaurant(withId: id)
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { _ in },
+                  receiveValue: { [weak self] _ in
+                guard let self = self else { return }
+                self.getFavoriteRestaurants()
+            })
+            .store(in: &cancellables)
+    }
+    
     func linkBuilder<Content: View>(
         for restaurant: RestaurantModel,
         @ViewBuilder content: () -> Content

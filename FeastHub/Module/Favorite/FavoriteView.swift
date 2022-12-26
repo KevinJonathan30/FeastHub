@@ -77,6 +77,18 @@ extension FavoriteView {
                 ZStack {
                     self.presenter.linkBuilder(for: restaurant) {
                         RestaurantCard(restaurant: restaurant)
+                            .contextMenu {
+                                self.presenter.linkBuilder(for: restaurant) {
+                                    Button {} label: {
+                                        Label("view_detail".localized(), systemImage: "cup.and.saucer.fill")
+                                    }
+                                }
+                                Button(role: .destructive) {
+                                    self.presenter.deleteFavoriteRestaurant(withId: restaurant.id)
+                                } label: {
+                                    Label("delete_favorite".localized(), systemImage: "star.slash.fill")
+                                }
+                            }
                     }.buttonStyle(PlainButtonStyle())
                 }
             }
